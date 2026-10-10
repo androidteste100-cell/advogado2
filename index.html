@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Drews Peres | Advocacia de Alta Performance</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        goldAccent: '#c5a059',
+                        goldHover: '#d4af37',
+                        cardBg: '#131b2e'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- GSAP & ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        .bg-radial-vignette {
+            background: radial-gradient(circle, transparent 40%, rgba(11, 15, 25, 0.85) 90%);
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-goldAccent selection:text-black">
+
+    <!-- NAVBAR FIXA -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-darkBg/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl font-serif font-bold tracking-wider text-slate-100">
+                    GUILHERME DREWS PERES
+                </span>
+                <span class="text-xs uppercase tracking-widest text-goldAccent border-l border-slate-700 pl-3">Advocacia</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#hero-trigger" class="hover:text-goldAccent transition-colors">Início</a>
+                <a href="#atuacao" class="hover:text-goldAccent transition-colors">Áreas de Atuação</a>
+                <a href="#avaliacoes" class="hover:text-goldAccent transition-colors">Avaliações</a>
+                <a href="#contato" class="bg-goldAccent hover:bg-goldHover text-black px-5 py-2.5 rounded-md font-semibold transition-all">
+                    Agendar Consulta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION SCROLLYTELLING (400vh) -->
+    <section id="hero-trigger" class="relative h-[400vh] w-full">
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+            
+            <!-- CANVAS BACKGROUND (Z-INDEX 0) -->
+            <canvas id="hero-canvas" class="absolute inset-0 w-full h-full block z-0"></canvas>
+
+            <!-- OVERLAY ANTI-SUMIÇO DE TEXTO (Z-INDEX 10) -->
+            <div class="absolute inset-0 bg-gradient-to-r from-darkBg/95 via-darkBg/75 to-darkBg/90 pointer-events-none z-10"></div>
+            <div class="absolute inset-0 bg-radial-vignette pointer-events-none z-10"></div>
+
+            <!-- CONTEÚDO HERO (Z-INDEX 20) -->
+            <div class="relative z-20 max-w-5xl mx-auto px-6 text-center md:text-left flex flex-col items-center md:items-start space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-goldAccent/10 border border-goldAccent/30 px-3 py-1.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-goldAccent animate-pulse"></span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-goldAccent">Atendimento Especializado em Porto Alegre</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight">
+                    Defesa Jurídica Estratégica & <span class="text-goldAccent">Excelência Operacional</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed">
+                    Soluções jurídicas sob medida com rigor técnico, ética e foco na proteção patrimonial e direitos dos nossos clientes.
+                </p>
+
+                <div class="pt-4 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                    <a href="#contato" class="w-full sm:w-auto px-8 py-4 bg-goldAccent hover:bg-goldHover text-black font-bold rounded-lg transition-all shadow-lg shadow-goldAccent/20 text-center">
+                        Falar com o Advogado
+                    </a>
+                    <a href="#atuacao" class="w-full sm:w-auto px-8 py-4 border border-slate-700 hover:border-goldAccent text-slate-300 hover:text-white font-medium rounded-lg transition-all text-center">
+                        Conhecer Áreas de Atuação
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PROVA SOCIAL (GOOGLE REVIEWS) -->
+    <section id="avaliacoes" class="py-24 bg-cardBg relative z-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-goldAccent mb-2">Reconhecimento</h2>
+                    <p class="text-3xl md:text-4xl font-serif font-bold text-white">Avaliação Máxima no Google</p>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center space-x-3 bg-darkBg/60 px-4 py-2 rounded-lg border border-slate-800">
+                    <div class="text-amber-400 text-xl font-bold">5.0</div>
+                    <div class="flex text-amber-400">★★★★★</div>
+                    <span class="text-slate-400 text-sm">(24 avaliações)</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-darkBg rounded-xl border border-slate-800">
+                    <div class="flex text-amber-400 mb-3">★★★★★</div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">"Atendimento impecável, alto nível de conhecimento técnico e solução rápida da minha demanda."</p>
+                    <p class="text-white font-semibold text-sm">— Cliente Verificado</p>
+                </div>
+                <div class="p-6 bg-darkBg rounded-xl border border-slate-800">
+                    <div class="flex text-amber-400 mb-3">★★★★★</div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">"Profissional extremamente ético e focado nos resultados do cliente. Recomendarei sempre."</p>
+                    <p class="text-white font-semibold text-sm">— Cliente Verificado</p>
+                </div>
+                <div class="p-6 bg-darkBg rounded-xl border border-slate-800">
+                    <div class="flex text-amber-400 mb-3">★★★★★</div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">"Excelente estrutura no Centro Histórico de Porto Alegre e condução impecável dos processos."</p>
+                    <p class="text-white font-semibold text-sm">— Cliente Verificado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO ÁREAS DE ATUAÇÃO -->
+    <section id="atuacao" class="py-24 bg-darkBg relative z-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-goldAccent mb-2">Especialidades</h2>
+                <p class="text-3xl md:text-4xl font-serif font-bold text-white">Atuação Jurídica Sob Medida</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-cardBg rounded-xl border border-slate-800 hover:border-goldAccent/50 transition-all">
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Advocacia Cível</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Resolução de conflitos contratuais, responsabilidade civil e litígios complexos com foco estratégico.</p>
+                </div>
+                <div class="p-8 bg-cardBg rounded-xl border border-slate-800 hover:border-goldAccent/50 transition-all">
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Direito Empresarial</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Consultoria preventiva, estruturação de negócios e proteção patrimonial de sócios e empresas.</p>
+                </div>
+                <div class="p-8 bg-cardBg rounded-xl border border-slate-800 hover:border-goldAccent/50 transition-all">
+                    <h3 class="text-xl font-serif font-bold text-white mb-3">Consultoria Contratual</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Elaboração e análise minuciosa de instrumentos contratuais para mitigação de riscos jurídicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO / FORMULÁRIO -->
+    <section id="contato" class="py-24 bg-cardBg relative z-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-goldAccent mb-2">Contato Directo</h2>
+                <p class="text-3xl font-serif font-bold text-white mb-6">Agende uma Consulta Presencial ou Online</p>
+                <p class="text-slate-300 text-sm mb-8 leading-relaxed">
+                    Localizado no coração do Centro Histórico de Porto Alegre. Atendimento personalizado com agendamento prévio.
+                </p>
+                <div class="space-y-4 text-sm text-slate-300">
+                    <p><strong class="text-white">Endereço:</strong> Av. Loureiro da Silva, 1940 - Sala 905, Centro Histórico, Porto Alegre - RS</p>
+                    <p><strong class="text-white">CEP:</strong> 90050-240</p>
+                </div>
+            </div>
+
+            <form class="space-y-4 bg-darkBg p-8 rounded-xl border border-slate-800">
+                <div>
+                    <label class="block text-xs font-medium text-slate-400 uppercase mb-2">Nome Completo</label>
+                    <input type="text" class="w-full bg-cardBg border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-goldAccent" placeholder="Seu nome">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-400 uppercase mb-2">E-mail ou WhatsApp</label>
+                    <input type="text" class="w-full bg-cardBg border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-goldAccent" placeholder="Seu contacto">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-400 uppercase mb-2">Resumo da Demanda</label>
+                    <textarea rows="4" class="w-full bg-cardBg border border-slate-700 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-goldAccent" placeholder="Descreva brevemente o assunto"></textarea>
+                </div>
+                <button type="button" class="w-full py-4 bg-goldAccent hover:bg-goldHover text-black font-bold rounded-lg transition-all shadow-lg shadow-goldAccent/20">
+                    Enviar Solicitação
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-darkBg border-t border-slate-800 text-center text-xs text-slate-500">
+        <p>© 2026 Guilherme Drews Peres - Advogado. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT WEBP CANVAS GSAP SCROLL -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const canvas = document.getElementById("hero-canvas");
+        const context = canvas.getContext("2d");
+
+        const frameCount = 120; // Número total de frames WebP
+        const currentFrame = index => `./frames/frame-${String(index + 1).padStart(4, '0')}.webp`;
+
+        const images = [];
+        const airbnb = { frame: 0 };
+
+        // Ajuste dinâmico de tamanho do canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            render();
+        }
+        window.addEventListener("resize", resizeCanvas);
+
+        // Pré-carregamento das imagens
+        let loadedCount = 0;
+        for (let i = 0; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            img.onload = () => {
+                loadedCount++;
+                if (loadedCount === 1) {
+                    resizeCanvas();
+                }
+            };
+            images.push(img);
+        }
+
+        // Animação GSAP vinculada ao scroll
+        gsap.to(airbnb, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#hero-trigger",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 0.5
+            },
+            onUpdate: render
+        });
+
+        // Função de renderização com simulação de object-fit: cover
+        function render() {
+            const img = images[airbnb.frame];
+            if (!img || !img.complete) return;
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            const hRatio = canvas.width / img.width;
+            const vRatio = canvas.height / img.height;
+            const ratio = Math.max(hRatio, vRatio);
+
+            const centerShift_x = (canvas.width - img.width * ratio) / 2;
+            const centerShift_y = (canvas.height - img.height * ratio) / 2;
+
+            context.drawImage(
+                img,
+                0, 0, img.width, img.height,
+                centerShift_x, centerShift_y, img.width * ratio, img.height * ratio
+            );
+        }
+    </script>
+</body>
+</html>
