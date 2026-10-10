@@ -200,8 +200,8 @@
         const canvas = document.getElementById("hero-canvas");
         const context = canvas.getContext("2d");
 
-        const frameCount = 120; // Número total de frames WebP
-        const currentFrame = index => `./frames/frame-${String(index + 1).padStart(4, '0')}.webp`;
+        const frameCount = 240; // Número total de frames WebP
+        const currentFrame = index => `./frames/frame_${String(index + 1).padStart(4, '0')}.webp`;
 
         const images = [];
         const airbnb = { frame: 0 };
